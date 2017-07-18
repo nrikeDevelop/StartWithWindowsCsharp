@@ -1,0 +1,13 @@
+c:\users\susy\documents\visual studio 2017\Projects\AppStartWindows\AppStartWindows\bin\Debug\AppStartWindows.exe.config
+c:\users\susy\documents\visual studio 2017\Projects\AppStartWindows\AppStartWindows\bin\Debug\AppStartWindows.exe
+c:\users\susy\documents\visual studio 2017\Projects\AppStartWindows\AppStartWindows\bin\Debug\AppStartWindows.pdb
+c:\users\susy\documents\visual studio 2017\Projects\AppStartWindows\AppStartWindows\obj\Debug\AppStartWindows.Form1.resources
+c:\users\susy\documents\visual studio 2017\Projects\AppStartWindows\AppStartWindows\obj\Debug\AppStartWindows.Properties.Resources.resources
+c:\users\susy\documents\visual studio 2017\Projects\AppStartWindows\AppStartWindows\obj\Debug\AppStartWindows.csproj.GenerateResource.Cache
+c:\users\susy\documents\visual studio 2017\Projects\AppStartWindows\AppStartWindows\obj\Debug\AppStartWindows.exe
+c:\users\susy\documents\visual studio 2017\Projects\AppStartWindows\AppStartWindows\obj\Debug\AppStartWindows.pdb
+C:\Users\Susy\Documents\Visual Studio 2017\Projects\AppStartWindows\AppStartWindows\obj\Debug\AppStartWindows.csprojResolveAssemblyReference.cache
+C:\Users\Susy\Documents\Visual Studio 2017\Projects\AppStartWindows\AppStartWindows\bin\Debug\MaterialSkin.dll
+C:\Users\Susy\Documents\Visual Studio 2017\Projects\AppStartWindows\AppStartWindows\bin\Debug\MetroFramework.Design.dll
+C:\Users\Susy\Documents\Visual Studio 2017\Projects\AppStartWindows\AppStartWindows\bin\Debug\MetroFramework.dll
+C:\Users\Susy\Documents\Visual Studio 2017\Projects\AppStartWindows\AppStartWindows\bin\Debug\MetroFramework.Fonts.dll

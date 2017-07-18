@@ -1,0 +1,259 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D7C3A114-CDD2-49AC-A0F1-0A1381C9D036}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>AppStartWindows</RootNamespace>
+    <AssemblyName>AppStartWindows</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MaterialSkin, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialSkin.0.2.1\lib\MaterialSkin.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Design, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Fonts, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Fonts.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\DialogResult.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="app.manifest">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Content\semantic-ui-rtl\themes\basic\assets\fonts\icons.eot" />
+    <None Include="Content\semantic-ui-rtl\themes\basic\assets\fonts\icons.ttf" />
+    <None Include="Content\semantic-ui-rtl\themes\basic\assets\fonts\icons.woff" />
+    <None Include="Content\semantic-ui-rtl\themes\default\assets\fonts\icons.eot" />
+    <None Include="Content\semantic-ui-rtl\themes\default\assets\fonts\icons.ttf" />
+    <None Include="Content\semantic-ui-rtl\themes\default\assets\fonts\icons.woff" />
+    <None Include="Content\semantic-ui-rtl\themes\default\assets\fonts\icons.woff2" />
+    <None Include="Content\semantic-ui-rtl\themes\material\assets\fonts\icons.eot" />
+    <None Include="Content\semantic-ui-rtl\themes\material\assets\fonts\icons.ttf" />
+    <None Include="Content\semantic-ui-rtl\themes\material\assets\fonts\icons.woff" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\semantic-ui-rtl\components\accordion.js" />
+    <Content Include="Content\semantic-ui-rtl\components\accordion.min.js" />
+    <Content Include="Content\semantic-ui-rtl\components\accordion.rtl.css" />
+    <Content Include="Content\semantic-ui-rtl\components\accordion.rtl.min.css" />
+    <Content Include="Content\semantic-ui-rtl\components\ad.rtl.css" />
+    <Content Include="Content\semantic-ui-rtl\components\ad.rtl.min.css" />
+    <Content Include="Content\semantic-ui-rtl\components\api.js" />
+    <Content Include="Content\semantic-ui-rtl\components\api.min.js" />
+    <Content Include="Content\semantic-ui-rtl\components\breadcrumb.rtl.css" />
+    <Content Include="Content\semantic-ui-rtl\components\breadcrumb.rtl.min.css" />
+    <Content Include="Content\semantic-ui-rtl\components\button.rtl.css" />
+    <Content Include="Content\semantic-ui-rtl\components\button.rtl.min.css" />
+    <Content Include="Content\semantic-ui-rtl\components\card.rtl.css" />
+    <Content Include="Content\semantic-ui-rtl\components\card.rtl.min.css" />
+    <Content Include="Content\semantic-ui-rtl\components\checkbox.js" />
+    <Content Include="Content\semantic-ui-rtl\components\checkbox.min.js" />
+    <Content Include="Content\semantic-ui-rtl\components\checkbox.rtl.css" />
+    <Content Include="Content\semantic-ui-rtl\components\checkbox.rtl.min.css" />
+    <Content Include="Content\semantic-ui-rtl\components\comment.rtl.css" />
+    <Content Include="Content\semantic-ui-rtl\components\comment.rtl.min.css" />
+    <Content Include="Content\semantic-ui-rtl\components\container.rtl.css" />
+    <Content Include="Content\semantic-ui-rtl\components\container.rtl.min.css" />
+    <Content Include="Content\semantic-ui-rtl\components\dimmer.js" />
+    <Content Include="Content\semantic-ui-rtl\components\dimmer.min.js" />
+    <Content Include="Content\semantic-ui-rtl\components\dimmer.rtl.css" />
+    <Content Include="Content\semantic-ui-rtl\components\dimmer.rtl.min.css" />
+    <Content Include="Content\semantic-ui-rtl\components\divider.rtl.css" />
+    <Content Include="Content\semantic-ui-rtl\components\divider.rtl.min.css" />
+    <Content Include="Content\semantic-ui-rtl\components\dropdown.js" />
+    <Content Include="Content\semantic-ui-rtl\components\dropdown.min.js" />
+    <Content Include="Content\semantic-ui-rtl\components\dropdown.rtl.css" />
+    <Content Include="Content\semantic-ui-rtl\components\dropdown.rtl.min.css" />
+    <Content Include="Content\semantic-ui-rtl\components\embed.js" />
+    <Content Include="Content\semantic-ui-rtl\components\embed.min.js" />
+    <Content Include="Content\semantic-ui-rtl\components\embed.rtl.css" />
+    <Content Include="Content\semantic-ui-rtl\components\embed.rtl.min.css" />
+    <Content Include="Content\semantic-ui-rtl\components\feed.rtl.css" />
+    <Content Include="Content\semantic-ui-rtl\components\feed.rtl.min.css" />
+    <Content Include="Content\semantic-ui-rtl\components\flag.rtl.css" />
+    <Content Include="Content\semantic-ui-rtl\components\flag.rtl.min.css" />
+    <Content Include="Content\semantic-ui-rtl\components\form.js" />
+    <Content Include="Content\semantic-ui-rtl\components\form.min.js" />
+    <Content Include="Content\semantic-ui-rtl\components\form.rtl.css" />
+    <Content Include="Content\semantic-ui-rtl\components\form.rtl.min.css" />
+    <Content Include="Content\semantic-ui-rtl\components\grid.rtl.css" />
+    <Content Include="Content\semantic-ui-rtl\components\grid.rtl.min.css" />
+    <Content Include="Content\semantic-ui-rtl\components\header.rtl.css" />
+    <Content Include="Content\semantic-ui-rtl\components\header.rtl.min.css" />
+    <Content Include="Content\semantic-ui-rtl\components\icon.rtl.css" />
+    <Content Include="Content\semantic-ui-rtl\components\icon.rtl.min.css" />
+    <Content Include="Content\semantic-ui-rtl\components\image.rtl.css" />
+    <Content Include="Content\semantic-ui-rtl\components\image.rtl.min.css" />
+    <Content Include="Content\semantic-ui-rtl\components\input.rtl.css" />
+    <Content Include="Content\semantic-ui-rtl\components\input.rtl.min.css" />
+    <Content Include="Content\semantic-ui-rtl\components\item.rtl.css" />
+    <Content Include="Content\semantic-ui-rtl\components\item.rtl.min.css" />
+    <Content Include="Content\semantic-ui-rtl\components\label.rtl.css" />
+    <Content Include="Content\semantic-ui-rtl\components\label.rtl.min.css" />
+    <Content Include="Content\semantic-ui-rtl\components\list.rtl.css" />
+    <Content Include="Content\semantic-ui-rtl\components\list.rtl.min.css" />
+    <Content Include="Content\semantic-ui-rtl\components\loader.rtl.css" />
+    <Content Include="Content\semantic-ui-rtl\components\loader.rtl.min.css" />
+    <Content Include="Content\semantic-ui-rtl\components\menu.rtl.css" />
+    <Content Include="Content\semantic-ui-rtl\components\menu.rtl.min.css" />
+    <Content Include="Content\semantic-ui-rtl\components\message.rtl.css" />
+    <Content Include="Content\semantic-ui-rtl\components\message.rtl.min.css" />
+    <Content Include="Content\semantic-ui-rtl\components\modal.js" />
+    <Content Include="Content\semantic-ui-rtl\components\modal.min.js" />
+    <Content Include="Content\semantic-ui-rtl\components\modal.rtl.css" />
+    <Content Include="Content\semantic-ui-rtl\components\modal.rtl.min.css" />
+    <Content Include="Content\semantic-ui-rtl\components\nag.js" />
+    <Content Include="Content\semantic-ui-rtl\components\nag.min.js" />
+    <Content Include="Content\semantic-ui-rtl\components\nag.rtl.css" />
+    <Content Include="Content\semantic-ui-rtl\components\nag.rtl.min.css" />
+    <Content Include="Content\semantic-ui-rtl\components\popup.js" />
+    <Content Include="Content\semantic-ui-rtl\components\popup.min.js" />
+    <Content Include="Content\semantic-ui-rtl\components\popup.rtl.css" />
+    <Content Include="Content\semantic-ui-rtl\components\popup.rtl.min.css" />
+    <Content Include="Content\semantic-ui-rtl\components\progress.js" />
+    <Content Include="Content\semantic-ui-rtl\components\progress.min.js" />
+    <Content Include="Content\semantic-ui-rtl\components\progress.rtl.css" />
+    <Content Include="Content\semantic-ui-rtl\components\progress.rtl.min.css" />
+    <Content Include="Content\semantic-ui-rtl\components\rail.rtl.css" />
+    <Content Include="Content\semantic-ui-rtl\components\rail.rtl.min.css" />
+    <Content Include="Content\semantic-ui-rtl\components\rating.js" />
+    <Content Include="Content\semantic-ui-rtl\components\rating.min.js" />
+    <Content Include="Content\semantic-ui-rtl\components\rating.rtl.css" />
+    <Content Include="Content\semantic-ui-rtl\components\rating.rtl.min.css" />
+    <Content Include="Content\semantic-ui-rtl\components\reset.rtl.css" />
+    <Content Include="Content\semantic-ui-rtl\components\reset.rtl.min.css" />
+    <Content Include="Content\semantic-ui-rtl\components\reveal.rtl.css" />
+    <Content Include="Content\semantic-ui-rtl\components\reveal.rtl.min.css" />
+    <Content Include="Content\semantic-ui-rtl\components\search.js" />
+    <Content Include="Content\semantic-ui-rtl\components\search.min.js" />
+    <Content Include="Content\semantic-ui-rtl\components\search.rtl.css" />
+    <Content Include="Content\semantic-ui-rtl\components\search.rtl.min.css" />
+    <Content Include="Content\semantic-ui-rtl\components\segment.rtl.css" />
+    <Content Include="Content\semantic-ui-rtl\components\segment.rtl.min.css" />
+    <Content Include="Content\semantic-ui-rtl\components\shape.js" />
+    <Content Include="Content\semantic-ui-rtl\components\shape.min.js" />
+    <Content Include="Content\semantic-ui-rtl\components\shape.rtl.css" />
+    <Content Include="Content\semantic-ui-rtl\components\shape.rtl.min.css" />
+    <Content Include="Content\semantic-ui-rtl\components\sidebar.js" />
+    <Content Include="Content\semantic-ui-rtl\components\sidebar.min.js" />
+    <Content Include="Content\semantic-ui-rtl\components\sidebar.rtl.css" />
+    <Content Include="Content\semantic-ui-rtl\components\sidebar.rtl.min.css" />
+    <Content Include="Content\semantic-ui-rtl\components\site.js" />
+    <Content Include="Content\semantic-ui-rtl\components\site.min.js" />
+    <Content Include="Content\semantic-ui-rtl\components\site.rtl.css" />
+    <Content Include="Content\semantic-ui-rtl\components\site.rtl.min.css" />
+    <Content Include="Content\semantic-ui-rtl\components\state.js" />
+    <Content Include="Content\semantic-ui-rtl\components\state.min.js" />
+    <Content Include="Content\semantic-ui-rtl\components\statistic.rtl.css" />
+    <Content Include="Content\semantic-ui-rtl\components\statistic.rtl.min.css" />
+    <Content Include="Content\semantic-ui-rtl\components\step.rtl.css" />
+    <Content Include="Content\semantic-ui-rtl\components\step.rtl.min.css" />
+    <Content Include="Content\semantic-ui-rtl\components\sticky.js" />
+    <Content Include="Content\semantic-ui-rtl\components\sticky.min.js" />
+    <Content Include="Content\semantic-ui-rtl\components\sticky.rtl.css" />
+    <Content Include="Content\semantic-ui-rtl\components\sticky.rtl.min.css" />
+    <Content Include="Content\semantic-ui-rtl\components\tab.js" />
+    <Content Include="Content\semantic-ui-rtl\components\tab.min.js" />
+    <Content Include="Content\semantic-ui-rtl\components\tab.rtl.css" />
+    <Content Include="Content\semantic-ui-rtl\components\tab.rtl.min.css" />
+    <Content Include="Content\semantic-ui-rtl\components\table.rtl.css" />
+    <Content Include="Content\semantic-ui-rtl\components\table.rtl.min.css" />
+    <Content Include="Content\semantic-ui-rtl\components\transition.js" />
+    <Content Include="Content\semantic-ui-rtl\components\transition.min.js" />
+    <Content Include="Content\semantic-ui-rtl\components\transition.rtl.css" />
+    <Content Include="Content\semantic-ui-rtl\components\transition.rtl.min.css" />
+    <Content Include="Content\semantic-ui-rtl\components\visibility.js" />
+    <Content Include="Content\semantic-ui-rtl\components\visibility.min.js" />
+    <Content Include="Content\semantic-ui-rtl\semantic.js" />
+    <Content Include="Content\semantic-ui-rtl\semantic.min.js" />
+    <Content Include="Content\semantic-ui-rtl\semantic.rtl.css" />
+    <Content Include="Content\semantic-ui-rtl\semantic.rtl.min.css" />
+    <Content Include="Content\semantic-ui-rtl\themes\basic\assets\fonts\icons.svg" />
+    <Content Include="Content\semantic-ui-rtl\themes\default\assets\fonts\icons.svg" />
+    <Content Include="Content\semantic-ui-rtl\themes\default\assets\images\flags.png" />
+    <Content Include="Content\semantic-ui-rtl\themes\material\assets\fonts\icons.svg" />
+    <Content Include="Content\ui-bootstrap-csp.css" />
+    <Content Include="MetroFramework.txt" />
+    <Content Include="Scripts\angular-ui\ui-bootstrap-tpls.js" />
+    <Content Include="Scripts\angular-ui\ui-bootstrap-tpls.min.js" />
+    <Content Include="Scripts\angular-ui\ui-bootstrap.js" />
+    <Content Include="Scripts\angular-ui\ui-bootstrap.min.js" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
