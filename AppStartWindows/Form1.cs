@@ -16,11 +16,12 @@ namespace AppStartWindows
         public Form1()
         {
             InitializeComponent();
+            refreshComboBox();
+           
         }
 
         String regeditInit = "SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run";
         String pathInit = "" ;
-        string nameRegedit = "";
 
         private void textBox1_Click(object sender, EventArgs e)
         {
@@ -39,7 +40,7 @@ namespace AppStartWindows
                 pathInit = ofd.FileName;
                 path_file.Text = pathInit;
 
-                nameRegedit = getFileName(pathInit);
+               
               //  MessageBox.Show(nameRegedit);           
             }
         }
@@ -53,76 +54,106 @@ namespace AppStartWindows
             return name[0];
         }
 
-        private void init_with_windows_Click(object sender, EventArgs e)
+        public void refreshComboBox()
         {
-         
-        }
+            start_combo_box.Items.Clear();
 
-        private void stop_windows_Click(object sender, EventArgs e)
-        {
-        
-        }
+            String[] ListKeys = Tools.getListKeys();
 
-        public void regeditStart()
-        {
-            try
+            if (ListKeys != null)
             {
-                RegistryKey rk = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true);
-                rk.SetValue(nameRegedit, pathInit);
-                rk.Close();
-
-                metro_label.Text = "Se iniciara con Windows";
+                for (int i = 0; i < ListKeys.Length; i++)
+                {
+                    start_combo_box.Items.Add(ListKeys[i]);
+                }
             }
-            catch(Exception ex)
+            else
             {
-                MessageBox.Show(ex.Message);
-            }
-          
-
-        }
-
-        public void regeditStop()
-        {
-            try
-            {
-
-                RegistryKey rk = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true);
-                rk.DeleteValue(nameRegedit);
-
-                metro_label.Text = "Registro eliminado";
-
-            }
-            catch (Exception ex)
-            {
-                metro_label.Text = "No existe registro";
-
-                //MessageBox.Show(ex.Message);
-
+                start_combo_box.Items.Add("No hay datos");
             }
         }
-
+   
         private void metro_button_start_Click(object sender, EventArgs e)
         {
+             String nameRegedit = getFileName(pathInit);
+
+
             if (pathInit.Equals(""))
             {
                 metro_label.Text = "Seleccina la ruta del archivo";
             }
             else
             {
-                regeditStart();
+
+                if(Tools.regeditStart(nameRegedit, pathInit))
+                {
+                    metro_label.Text = "Se iniciara con Windows";
+                    refreshComboBox();
+                }
+                else
+                {
+                    metro_label.Text = "Error de registro";
+
+                }
+
             }
         }
 
         private void metro_button_stop_Click(object sender, EventArgs e)
         {
+
+            try
+            {
+      
+                String nameRegedit = start_combo_box.SelectedItem.ToString();
+
+                if (nameRegedit != null)
+                {
+                    if (Tools.regeditStop(nameRegedit))
+                    {
+                        metro_label.Text = "Registro eliminado";
+                        refreshComboBox();
+                    }
+                    else
+                    {
+                        metro_label.Text = "No existe registro";
+                    }
+                }
+            }
+            catch
+            {
+                metro_label.Text = "Selecciona el registro a eliminar";
+
+            }
+
+
+            /*
+
             if (pathInit.Equals(""))
             {
                 metro_label.Text = "Seleccina la ruta del archivo";
             }
             else
             {
-                regeditStop();
+                if (Tools.regeditStop(nameRegedit))
+                {
+                    metro_label.Text = "Registro eliminado";
+                }
+                else
+                {
+                    metro_label.Text = "No existe registro";
+                }
             }
+            */
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Tools.getListKeys();
+        }
+
+  
+
+
     }
 }
